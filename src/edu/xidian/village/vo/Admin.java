@@ -1,9 +1,13 @@
 package edu.xidian.village.vo;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 
 
 
@@ -15,7 +19,8 @@ public class Admin {
 	private Integer id;
 	private String name;
 	private String password;
-	
+	@OneToMany(mappedBy="admin")
+	private Set<Wish> wishs;
 	
 	public Integer getId() {
 		return id;
@@ -34,6 +39,12 @@ public class Admin {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public Set<Wish> getWishs() {
+		return wishs;
+	}
+	public void setWishs(Set<Wish> wishs) {
+		this.wishs = wishs;
 	}
 	
 }

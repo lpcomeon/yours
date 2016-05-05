@@ -3,11 +3,29 @@
 <struts>
 <constant name="struts.configuration.xml.reload" value="true"/> 
 <constant name="struts.i18n.encoding" value="UTF-8"/> 
-	<package name="yours" namespace="/" extends="struts-default">
+	<package name="default-admin" extends="struts-default,json-default,tiles-default">
+		 <interceptors>
+		 <interceptor name="adminlogininterceptor" class="adminLoginInterceptor"></interceptor>
+			<interceptor-stack name="local-defaultStack">
+				<interceptor-ref name="adminlogininterceptor">
+					<param name="excludeMethods">login</param>
+				</interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="local-defaultStack"/>
+		
+		 <global-results>
+			<result name="success">/index.jsp</result>
+			<result name="error">/login.jsp</result>
+		</global-results>
+	</package>
+	<package name="yours" namespace="/" extends="default-admin">
 	
-		<action name="admin*" class="adminAction" method="{1}">
-			<result name="success">/success.jsp</result>
-			<result name="error">/index.jsp</result>
+		<action name="*" class="adminAction" method="{1}">
+			<result name="redirectIndex" type="redirectAction">
+				<param name="actionName">findAllWishs</param>
+			</result>
 		</action>
 	</package>
 </struts>    

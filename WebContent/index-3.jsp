@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"
 <html lang="en">
      <head>
@@ -84,39 +85,14 @@ $(window).load(function(){
      </head>
      <body  class="page1">
 <!--==============================header=================================-->
- <header> 
-  <div class="container_12">
-    <div class="grid_12"> 
-    <h1><a href="index.html"><img src="images/logo.png" alt="Sara  &amp;  Robert Personal Wedding Page"></a> </h1>
-         <div class="menu_block">
-           <nav  class="" >
-            <ul class="sf-menu">
-                   <li><a href="index.jsp">Home</a></li>
-                   <li class="with_ul"><a href="index-1.jsp">About Us </a>
-                     <ul>
-                         <li><a href="#"> Presentation</a></li>
-                         <li><a href="#">Calendar</a></li>
-                     </ul>
-                   </li>
-                   <li><a href="index-2.jsp">Weddings</a></li>
-                   <li class="current"><a href="index-3.jsp">Photo Album</a></li>
-                   <li><a href="index-4.jsp">Your Wishes</a></li>
-                   <li><a href="index-5.jsp">Contact Us</a></li>
-                 </ul>
-              </nav>
-           <div class="clear"></div>
-           </div>
-           <div class="clear"></div>
-      </div>
-    </div>
-</header>
+ <s:include value="head.jsp"/>
 
 <!--=======content================================-->
 
 <div class="content"><div class="ic">More Website Templates @ TemplateMonster.com - June 24, 2013!</div>
   <div class="container_12">
     <div class="grid_12">
-      <h2>Photo Album</h2>
+      <h2>照片墙</h2>
         <div class="grid_12 omega alpha">
                   <div id="gallery" class="content advanced_gallery">
                     <div class="slideshow-container">
@@ -130,15 +106,10 @@ $(window).load(function(){
                   <div id="thumbs" class="navigation">
                     <ul class="thumbs noscript">
                       <li> <a class="thumb img_inner" href="images/big1.jpg"> <img src="images/thumb1.jpg" alt="" /></a>
-                        <div class="caption">
-                          <p class="col1 text1">01. Photo Name</p>
-                          <p>Quisque fringilla dolor suscipit tincertidunt luctus risus mauris iaculis dui vel rutrum lacus lacus eu felis. Morbitrol hendrerit dolor dolo eutrol lobortis risusyot congue sed. Vestibulum hendrerit purus at dapibusyl varius. Lorem ipsum dolor sit amet consectetur adipiscingyot elityro il. Donec et aliquet odio. Morbi hendrerit dolor dolor eu lobortis risusyloti congue sed. </p>
-                          <p>Vestibulum hendrerit purus at dapibus varius risusyrolim mauris loyiti loiaculis dui vel rutrum lacus lacus eu felis.Nulla vitaete suscipit nislo rhoncus ultricies dolor. Duis quis lectustro risus. Nunc egestas egete quam non tincidunt.  Lorem ipsum dolor sit amet consectetur adipulo iscing elit. Curabitur egestas leo a interdum porta. </p>
-                          
-                          Morbi eu leo sagittis sollicitudin sem a consequat nulla. Proin lopitroli
-hedrerit sodales tempor. Quisque fringilla dolor suscipit tinciduntuloty luctus risus mauris iaculis dui vel rutrum lacus lacus eu felis. Morbilo hendrerit dolor dolor, eu lobortis risus congue sed. Vestibulum jolitolir hedrerit purus at dapibus varius. Lorem ipsum dolor sit amet consetr
-ctetur adipiscing elit. Donec et aliquet odio. Nulla vitae suscipit nislolit rhoncus ultricies dolor. Duis quis lectus risus. Nunc egestas egetrero quam non tincidunt. Quisque fringilla, dolor suscipit tincidunt luctusilu risus mauris iaculis dui vel rutrum lacus lacus eu felis. Morbi hentino
-ndrerit dolor dolor eu lobortis risus congue sed. 
+                       <div class="caption">
+                          <p class="col1 text1">给你最美得婚礼</p>
+                          <p>婚礼全听你的</p>
+                          <div>下面的照片到时候在放</div>
                           
                         </div>
                       </li>
@@ -279,20 +250,7 @@ ndrerit dolor dolor eu lobortis risus congue sed.
 </div>
 <!--==============================footer=================================-->
 
-<footer>    
-  <div class="container_12">
-    <div class="grid_12">
-      <div class="socials">
-        <a href="#"></a>
-        <a href="#"></a>
-        <a href="#"></a>
-      </div>
-     <p><a href="index.html" class="footer_logo"><img src="images/footer_logo.png"  alt=""></a>  &copy; Copyright &copy; 2013.Company name All rights reserved.<a target="_blank" href="http://www.freemoban.com/">www.freemoban.com</a></p>
-     
-    </div>
-    <div class="clear"></div>
-  </div>
-</footer>
+<s:include value="foot.jsp"/>
 
 </body>
 </html>

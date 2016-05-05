@@ -13,18 +13,31 @@ public class AdminServiceImpl implements AdminService{
 	private AdminDao adminDaoImpl;
 	
 	@Override
-	public boolean login(Admin admin) {
+	public Admin login(Admin admin) {
 		try {
 			System.out.println(admin.getName());
 			Admin ad =adminDaoImpl.getAdmin(admin.getName());
 			if(ad.getPassword()==admin.getPassword()||ad.getPassword().equals(admin.getPassword()))
-				return true;
+				return ad;
 		} catch (Exception e) {
 			
 			e.printStackTrace();
-			return false;
+			return null;
 		}
-		return false;
+		return null;
+	}
+
+
+	@Override
+	public Admin getUser(int id) {
+		
+		return adminDaoImpl.get(Admin.class, id);
+	}
+	
+	@Override
+	public void add(Admin admin) {
+			
+		adminDaoImpl.add(admin);
 	}
 
 	@Override
@@ -69,7 +82,4 @@ public class AdminServiceImpl implements AdminService{
 
 
 	
-	
-	
-
 }

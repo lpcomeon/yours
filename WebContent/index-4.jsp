@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"tml>
 <html lang="en">
      <head>
@@ -33,103 +41,76 @@
      </head>
      <body  class="">
 <!--==============================header=================================-->
- <header> 
-  <div class="container_12">
-    <div class="grid_12"> 
-    <h1><a href="index.html"><img src="images/logo.png" alt="Sara  &amp;  Robert Personal Wedding Page"></a> </h1>
-         <div class="menu_block">
-           <nav  class="" >
-            <ul class="sf-menu">
-                   <li><a href="index.jsp">Home</a></li>
-                   <li class="with_ul"><a href="index-1.jsp">About Us </a>
-                     <ul>
-                         <li><a href="#"> Presentation</a></li>
-                         <li><a href="#">Calendar</a></li>
-                     </ul>
-                   </li>
-                   <li><a href="index-2.jsp">Weddings</a></li>
-                   <li><a href="index-3.jsp">Photo Album</a></li>
-                   <li class="current"><a href="index-4.jsp">Your Wishes</a></li>
-                   <li><a href="index-5.jsp">Contact Us</a></li>
-                 </ul>
-              </nav>
-           <div class="clear"></div>
-           </div>
-           <div class="clear"></div>
-      </div>
-    </div>
-</header>
+ <s:include value="head.jsp"/>
 
 <!--=======content================================-->
 
 <div class="content"><div class="ic">More Website Templates @ TemplateMonster.com - June 24, 2013!</div>
   <div class="container_12 pp">
     <div class="grid_7">
-      <h2>Your Wishes</h2>
-      <blockquote class="q1">
+      <h2>你的愿望</h2>
+     <%--  <blockquote class="q1">
         <div class="fl">
-        <img src="images/page5_img1.jpg" alt="" class="img_inner fleft"><div class="clear"></div><span>Irma Grey</span></div>
+        <img src="images/page1_img2.jpg" alt="" class="img_inner fleft"><div class="clear"></div><span>井小井</span></div>
         <div class="quote extra_wrapper">
-          <p>â?.. Integer rutrum ante eu lacustibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque. Vivamus eget nibh. Etiam cursus leo vel metus. </p>Nulla facilisi. Aenean nec erotibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sednteger rutrum ante eu lacustibulum libero nisl, porta vel, scelerisque eget...â?
+          <p>瘦</p>
+          	对，一定要瘦，腿要纤细，胸要变大。
         </div>
       </blockquote>
       <blockquote class="q2"><div class="fl">
-        <img src="images/page5_img2.jpg" alt="" class="img_inner fleft"><div class="clear"></div><span>Kevin Smith</span></div>
+        <img src="images/page1_img3.jpg" alt="" class="img_inner fleft"><div class="clear"></div><span>井小井</span></div>
         <div class="quote  extra_wrapper">
-          <p>â?.. Integer rutrum ante eu lacustibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque. Vivamus eget nibh. Etiam cursus leo vel metus. </p>Nulla facilisi. Aenean nec erotibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sednteger rutrum ante eu lacustibulum libero nisl, porta vel, scelerisque eget...â?
+          <p>美</p>
+          对，一定要美，美到没朋友，自己都爱死自己了。
+        </div> --%>
+         <c:forEach var="wish" items="${sessionScope.wishlist}">
+      <blockquote>
+        <img src="images/page1_img2.jpg" alt="" class="img_inner fleft">
+        <div class="quote extra_wrapper">
+          	${wish.content}
         </div>
       </blockquote>
+      
+      </c:forEach>
+     <!--  </blockquote>
       <blockquote class="q3"><div class="fl">
         <img src="images/page5_img3.jpg" alt="" class="img_inner fleft"><div class="clear"></div><span>Sarah Jhons</span></div>
         <div class="quote  extra_wrapper">
-          <p>â?.. Integer rutrum ante eu lacustibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque. Vivamus eget nibh. Etiam cursus leo vel metus. </p>Nulla facilisi. Aenean nec erotibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sednteger rutrum ante eu lacustibulum libero nisl, porta vel, scelerisque eget...â?
+          <p></p>
         </div>
-      </blockquote>
+      </blockquote> -->
       <div class="border"></div>
     </div>
     <div class="grid_5">
-      <h2>Add Your Wish</h2>
-      <form id="form">
-      <div class="success_wrapper">
+      <h2>添加愿望</h2>
+      <form  action="<%=path%>/add" method="post">
+      <%-- <div class="success_wrapper">
       <div class="success">Contact form submitted!<br>
       <strong>We will be in touch soon.</strong> </div></div>
-      <fieldset>
-      <label class="name">
+      <fieldset> --%>
+      <%-- <label class="name">
       <input type="text" value="Your Name:">
       <br class="clear">
       <span class="error error-empty">*This is not a valid name.</span><span class="empty error-empty">*This field is required.</span> </label>
       <label class="email">
       <input type="text" value="E-mail:">
       <br class="clear">
-      <span class="error error-empty">*This is not a valid email address.</span><span class="empty error-empty">*This field is required.</span> </label>
+      <span class="error error-empty">*This is not a valid email address.</span><span class="empty error-empty">*This field is required.</span> </label> --%>
       
-      <label class="message">
-      <textarea>Message:</textarea>
-      <br class="clear">
-      <span class="error">*The message is too short.</span> <span class="empty">*This field is required.</span> </label>
-      <div class="clear"></div>
-      <div class="btns"><a data-type="reset" class="btn">Reset</a><a data-type="submit" class="btn">Submit</a>
-      <div class="clear"></div>
-      </div></fieldset></form>
+      <textarea name="wish.content" cols="50" rows="10"></textarea>
+      <%-- <br class="clear">
+      <span class="error">*字数太少了.</span> <span class="empty">*不能为空.</span> </label>
+      <div class="clear"></div> --%>
+      <input type="submit" value="Submit" align="right"/>
+      
+      
+      </form>
     </div>
   </div>
 </div>
 <!--==============================footer=================================-->
 
-<footer>    
-  <div class="container_12">
-    <div class="grid_12">
-      <div class="socials">
-        <a href="#"></a>
-        <a href="#"></a>
-        <a href="#"></a>
-      </div>
-     <p><a href="index.html" class="footer_logo"><img src="images/footer_logo.png"  alt=""></a>  &copy; Copyright &copy; 2013.Company name All rights reserved.<a target="_blank" href="http://www.freemoban.com/">www.freemoban.com</a></p>
-     
-    </div>
-    <div class="clear"></div>
-  </div>
-</footer>
+<s:include value="foot.jsp"></s:include>
 
 </body>
 </html>

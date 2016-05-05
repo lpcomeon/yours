@@ -16,6 +16,18 @@ public class AdminDaoImpl extends VillageHibernateTemplate implements AdminDao{
 		return (Admin) getHibernateTemplate().find("from Admin where name = ?",name).get(0);
 	}
 
+	@Override
+	public Admin get(Class<? extends Admin> c, int id) {
+		return getHibernateTemplate().get(Admin.class, id);
+	}
+
+	@Override
+	public void add(Admin admin) {
+		this.getHibernateTemplate().save(admin);
+		
+	}
+
+	
 
 
 }

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"
 <html lang="en">
      <head>
@@ -39,32 +42,7 @@
      </head>
      <body  class="page1">
 <!--==============================header=================================-->
- <header> 
-  <div class="container_12">
-    <div class="grid_12"> 
-    <h1><a href="index.html"><img src="images/logo.png" alt="Sara  &amp;  Robert Personal Wedding Page"></a> </h1>
-         <div class="menu_block">
-           <nav  class="" >
-            <ul class="sf-menu">
-                   <li class="current"><a href="index.jsp">Home</a></li>
-                   <li class="with_ul"><a href="index-1.jsp">About Us </a>
-                     <ul>
-                         <li><a href="#"> Presentation</a></li>
-                         <li><a href="#">Calendar</a></li>
-                     </ul>
-                   </li>
-                   <li><a href="index-2.jsp">Weddings</a></li>
-                   <li><a href="index-3.jsp">Photo Album</a></li>
-                   <li><a href="index-4.jsp">Your Wishes</a></li>
-                   <li><a href="index-5.jsp">Contact Us</a></li>
-                 </ul>
-              </nav>
-           <div class="clear"></div>
-           </div>
-           <div class="clear"></div>
-      </div>
-    </div>
-</header>
+<s:include value="head.jsp"/>
 <div class="top_block">
  <div class="slider-relative">
     <div class="slider-block">
@@ -84,86 +62,69 @@
 <div class="content page1"><div class="ic">More Website Templates @ TemplateMonster.com - June 24, 2013!</div>
   <div class="container_12">
     <div class="grid_10">
-      <h2>Welcome to Our Wedding</h2>
+      <h2>Welcome to Our Home</h2>
       <img src="images/page1_img1.jpg" alt="" class="img_inner fleft">
       <div class="extra_wrapper style1">
-         <p>点这里</a> for more info about this free website template created by TemplateMonster.com </p>
-         <p>Lorem ipsum dolor sit amet consectetur adipet isyuing elit. Sed nec placerat turpis nec rutrumi est. Maecenas toro aliquet tristique tellus. Cras gravida nibh ac neque hendrerit into consequat lectusy elementumol. Sed condimetntum urna sit amet metus dignissim vel varius nunc viverratr.</p>
-         <p>Cum sociis natoque penatibus et magnisylotin distolo parturytient montes nascetur ridiculy syloto.  Cras gravida nibh ac neque hendrerit into consequat lectus elementumol. Sed condimet ntumerty urna sit amet metus dignissim vel varius nunc viverratr. Maetyocenas velit magna convallis.</p>
+         
+         <p>在这里，我讲会记录我们的过去，现在，未来。我们开心与不开心，我们的欢乐与悲伤，一切关于我们的事情，都将写到这里。你记性不好，忘记什么了，就来找这里看看，想起什么了，就来这里逛逛，我们的故事，一直未完待续。。。。。。</p>
          <a href="#" class="btn">More</a>
       </div>
     </div>
     <div class="grid_12">
       <div class="banners">
-        <div class="maxheight"><h2>Wedding Location</h2>
-          <p><a href="#">Cras gravida nibh ac neque hendrerityno intortiolot consequat lectus elementumol. </a></p>
-            <p>Sed condimytui etorem ipsum dolor sitrol ametyre consectetur adipet tymolotymon wertunio wercinaloisyuing elit. Ted nectro placerat turpis nec rutrumit est. Maecholi enas toro aliquet tristique tellus.</p>
+        <div class="maxheight"><h2>成都</h2>
+          <p><a href="#">初次相遇，请多多包涵</a></p>
+            <p>一次说走就走的旅行，一段说开始就开始的爱情。惊奇的是这两件事情同时在我身上发生了！而我觉得世间最幸福最浪漫的事就是和自己所爱的人开始一段说走就走的旅行。若有机会，还愿同你前去。因为成都，有我吻你的味道。</p>
         </div>
-        <div class="maxheight"><h2>Gift Registry</h2>
-          <p><a href="#">Yoliras gravida nibh ac neque hendrerju
-ityno intortiolot consequat lectus elemen.</a></p>
-            <p>Ged ndimytui etorem ipsum dolor sitrolmj ametyre ansectetur adipet tymolotymonu wertunio ercinaloisyuing elit. Gyd nectro placerat turpis nec rutrumit est. Taecholi enas toro aliquet tristique ertou.</p>
+        <div class="maxheight"><h2>凤凰</h2>
+          <p><a href="#">天赐良机，怎能不珍惜</a></p>
+            <p>为了你，这座古城等待了千年！未曾想过，有一座小城会让我如此魂牵梦绕,因为同你前往。在凤凰有个不成文的定律，那就是三天定律，只要你静下心呆过三天后，你就不想走了。凤凰是一个不思未来，不念过去的地方，我们就在这里，就在这个时候，相爱吧！</p>
         </div>
-        <div class="maxheight"><h2>Honeymoon Destination</h2>
-          <p><a href="#">Kolira ravida nibh ac neque hendrerityno intortiolot consequat ectus elemer.</a></p>
-         <p>Ftyd ndimytui etorem ipsum dolor sitrollo ametyre ansectetur ahopet tymolotymoni wertunio ercinaloisyuing elit. Kloyd nectro placerat turpis nec rutrumit est. Saecholit enas toro aliquet tristique ertok.</p>
+        <div class="maxheight"><h2>北京</h2>
+          <p><a href="#">在我眼里，你就是世界</a></p>
+         <p>如果你不出去走走，你就会以为这就是世界。帝都，这个从小想起都会激动的城市，我们来了。去感受，去聆听，去洗礼。这里有宏伟，有威严，有气势，有美，当然还有你，我最爱的人。我愿陪你实现你和我的梦想，来吧，来吧，我们出发了。</p>
         </div>
       </div>
     </div>
     <div class="clear"></div>
     <div class="grid_5">
-      <h2>Your Wishes</h2>
+      <h2>你的愿望</h2>
+      <c:forEach var="wish" items="${sessionScope.wishlist}">
       <blockquote>
         <img src="images/page1_img2.jpg" alt="" class="img_inner fleft">
         <div class="quote extra_wrapper">
-          <div class="col1">Irma Grey
-            <time datetime="2013-01-01">14. 05.2013</time>
-          </div>
-          Kloporem ipsum dolor sit ametyol consectetur adipisyuing elit. Redul nec placerat turpis nec rutrumi est. 
+          	${wish.content}
         </div>
       </blockquote>
-      <blockquote>
+      
+      </c:forEach>
+     <!--  <blockquote>
         <img src="images/page1_img3.jpg" alt="" class="img_inner fleft">
         <div class="quote extra_wrapper">
-          <div class="col1">Kevin Smith
-            <time datetime="2013-01-01">14. 05.2013</time>
+          <div class="col1">美
+           
           </div>
-          Alpiloporem iyosum dolor sit ame
-etyol consectetur adipisyuing elit. Kedul nec placerat turpis necertyn. 
+         	对，一定要美，美到没朋友，自己都爱死自己了。
         </div>
-      </blockquote>
+      </blockquote> -->
       <a href="#" class="btn b2">More</a>
     </div>
     <div class="grid_6 prefix_1">
-      <h2>Our Love Story</h2>
+      <h2>我们爱的故事</h2>
       <img src="images/page1_img4.jpg" alt="" class="img_inner fleft fl1">
       <div class="extra_wrapper">
-        <p class="col1"><a href="#">Korem ipsum dolor sit amet consectur adipet isylotouing elit. Koed necytolokoj placerat turpis nec rutrumi. </a></p>
-        Teoro aliquet tristique tellus. Hrasterlot gravidalop nibh acer neque hendrerituli into consttlorequat lectusy. Sed condlio
-imetntum urna sit amet metus dignitr.
+        <p class="col1"><a href="#">
+       一路走来，点点滴滴都是爱，都是幸福。
       </div>
       <div class="clear"></div>
-      Nunc ante nisl porttitor eu venenatis non gravida a augue. Etiam malesuada dui act pharetra vestibulum est sem ultrices enim quis tristique mi neque laoreet seytoerm. Aliquam erat volutpat. Praesent consequat diam egestas neque tristiqaliquet. <br>
+      曾不敢想象，你能来到我身边，多么遥不可及的事情，我是有多么的幸运，感谢你一路陪着我，走过一段又一段艰辛的历程。今天看唯爱，突然发现我们在一起1242天，真的好快，真挺不容易，上面有无数我们的心声，突然以前的经历历历在目，记录也想是最好的回忆，忘记了，就去看看，还是那么的温馨，那么的幸福。三年半，我们都长大了，也不是以前小孩子气，我们的肩上承担着责任，承担着压力，也同样承载着幸福。我愿通过这几个月的努力，让你重新认识我，我要变成一个让你值得托付，值得信任，值得拥有的男人，给你希望，给你未来，给你幸福。我愿在这里等你，我最爱的你 <br>
       <a href="#" class="btn b1">More</a>
     </div>
   </div>
 </div>
 <!--==============================footer=================================-->
-
-<footer>    
-  <div class="container_12">
-    <div class="grid_12">
-      <div class="socials">
-        <a href="#"></a>
-        <a href="#"></a>
-        <a href="#"></a>
-      </div>
-     <p><a href="index.html" class="footer_logo"><img src="images/footer_logo.png"  alt=""></a>  &copy; Copyright &copy; 2013.Company name All rights reserved.<a target="_blank" href="http://www.freemoban.com/">www.freemoban.com</a></p>
-     
-    </div>
-    <div class="clear"></div>
-  </div>
-</footer>
+<s:include value="foot.jsp" />
+	<%-- <tiles:insertAttribute name="foot"/> --%>
 
 </body>
 </html>
